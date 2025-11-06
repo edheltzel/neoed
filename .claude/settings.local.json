@@ -5,7 +5,9 @@
       "WebSearch",
       "Bash(codebook-lsp:*)",
       "WebFetch(domain:github.com)",
-      "mcp__context7__get-library-docs"
+      "mcp__context7__get-library-docs",
+      "Bash(tree:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
