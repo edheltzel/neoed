@@ -2,9 +2,12 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
-      image = { enable = true },
+      image = {
+        enable = true,
+        max_width = 100,
+      },
       persistance = {
-        need = 1,
+        need = 0, -- always save
       },
       picker = {
         sources = {
