@@ -2,18 +2,28 @@
 
 **my personal Neovim configuration**
 
-A modern, feature-rich Neovim configuration built on top of [LazyVim](https://github.com/LazyVim/LazyVim) with extensive language support, AI integrations, and a carefully crafted keymap system.
+A modern, feature-rich Neovim configuration built on top of [LazyVim](https://github.com/LazyVim/LazyVim) with extensive language support, AI integrations, and an opinioned keymap system.
+
+## Highlights
+
+Includes:
+
+- **AI Arsenal**: Claude Code + OpenCode + Supermaven working together
+- **Always-on Git Blame**: See commit context for every line without lifting a finger
+- **macOS Native Feel**: Delete words with Alt+Backspace, familiar shortcuts
+- **Borderless Aesthetics**: LazyGit and terminals with clean, border-free interfaces
 
 ## Features
 
 - **Modern Plugin Management**: Powered by [lazy.nvim](https://github.com/folke/lazy.nvim) with automatic plugin updates
-- **AI Integration**: Built-in support for Claude Code and Supermaven
-- **Extensive Language Support**: Pre-configured for Go, Python, Rust, TypeScript, PHP, Vue, Svelte, Astro, and more
+- **AI Integration**: Triple AI support with Claude Code, OpenCode, and Supermaven
+- **Extensive Language Support**: Pre-configured for Go, Python, Rust, TypeScript, PHP, Vue, Svelte, Astro, Tailwind, Twig, and more
 - **Custom Keybindings**: Ergonomic keymaps with VSCode-like shortcuts and modal editing enhancements
-- **Beautiful UI**: Eldritch colorscheme with custom lualine statusline
-- **Development Tools**: Integrated LazyGit, debugging (DAP), REST client, and GitHub CLI
-- **Smart File Navigation**: Snacks picker/explorer with hidden file support
+- **Beautiful UI**: Eldritch colorscheme with custom lualine statusline and custom dashboard
+- **Development Tools**: Integrated LazyGit with blame, debugging (DAP), REST client, and GitHub CLI
+- **Smart File Navigation**: Snacks picker/explorer with hidden file support and mini-files
 - **Code Formatting**: Biome formatter with language-specific configurations
+- **Git Integration**: Gitsigns with current line blame and inline diff signs
 
 ## Prerequisites
 
@@ -37,6 +47,7 @@ Before installing NOE.ED, ensure you have the following:
   - Rust: `rustc`, `rust-analyzer`
   - Javascript/TypeScript: `node`, `typescript`, `typescript-language-server`
   - PHP: `php`, `intelephense`
+  - Tailwind CSS: `tailwindcss-language-server`
 
 ## Installation
 
@@ -105,9 +116,24 @@ Before installing NOE.ED, ensure you have the following:
 ### Getting Started
 
 - **Leader key**: `Space`
-- **Exit Insert mode**: `jj`
+- **Exit Insert mode**: `jj` or `jk`
 - **Save file**: `<leader>fs` or `:w`
 - **Quit**: `<leader>q` or `:q`
+
+### Custom Dashboard
+
+NOE.ED features a custom Snacks dashboard (lua/plugins/snacks.lua:27) with quick access shortcuts:
+
+- `n` - New file
+- `r` - Recent files
+- `f` - Find file
+- `g` - Find text (live grep)
+- `o` - Find session
+- `d` - Open DOTFILES directory
+- `v` - Open NOE.ED config
+- `x` - LazyExtras menu
+- `l` - Lazy plugin manager
+- `q` - Quit
 
 ### Essential Keybindings
 
@@ -115,12 +141,15 @@ Before installing NOE.ED, ensure you have the following:
 
 | Key | Mode | Description |
 |-----|------|-------------|
-| `jj` | Insert | Exit Insert mode |
+| `jj` or `jk` | Insert | Exit Insert mode |
 | `U` | Normal | Redo |
 | `<C-a>` | Normal | Select all |
 | `gh` / `gl` | Normal | Jump to beginning/end of line |
-| `<Alt-j/k>` | Normal/Visual | Move lines up/down |
+| `<Alt-j/k>` or `<Alt-up/down>` | Normal/Visual | Move lines up/down |
+| `<Alt-Ctrl-Up>` or `<Alt-Ctrl-d>` | Normal/Visual | Duplicate lines |
+| `<Alt-Backspace>` | Insert/Command/Normal | Delete word (macOS style) |
 | `<Enter>` | Normal | Toggle code folding |
+| `>` / `<` | Visual | Indent right/left and reselect |
 
 #### File Management
 
@@ -141,17 +170,38 @@ Before installing NOE.ED, ensure you have the following:
 | `<leader>wh` | Normal | Split horizontally |
 | `<leader>wd` | Normal | Close window |
 
-#### AI / Claude Code
+#### AI Tools
+
+**Claude Code:**
 
 | Key | Mode | Description |
 |-----|------|-------------|
 | `<leader>ac` | Normal | Toggle Claude Code |
 | `<leader>af` | Normal | Focus Claude Code |
 | `<leader>ar` | Normal | Resume Claude session |
+| `<leader>aC` | Normal | Continue Claude session |
+| `<leader>am` | Normal | Select Claude model |
 | `<leader>ab` | Normal | Add current buffer to context |
 | `<leader>as` | Visual | Send selection to Claude |
 | `<leader>aa` | Normal | Accept diff |
 | `<leader>ad` | Normal | Deny diff |
+
+**OpenCode:**
+
+| Key | Mode | Description |
+|-----|------|-------------|
+| `<leader>ao` | Normal | Launch/Toggle OpenCode |
+| `<Ctrl-Alt-a>` | Normal/Visual | Ask OpenCode |
+| `<Ctrl-Alt-x>` | Normal/Visual | Execute OpenCode action |
+| `<Ctrl-Alt-g>` | Normal/Visual | Add to OpenCode |
+
+**Supermaven:**
+
+| Key | Mode | Description |
+|-----|------|-------------|
+| `<C-l>` | Insert | Accept suggestion |
+| `<C-x>` | Insert | Clear suggestion |
+| `<C-j>` | Insert | Accept word |
 
 #### Search & Replace
 
@@ -165,16 +215,22 @@ Before installing NOE.ED, ensure you have the following:
 
 | Key | Mode | Description |
 |-----|------|-------------|
-| `<leader>gg` | Normal | LazyGit |
+| `<leader>gg` | Normal | LazyGit (borderless) |
 | `<leader>gb` | Normal | Git blame line |
 | `<leader>gd` | Normal | Git diff |
+
+**Git Features:**
+
+- Inline current line blame (gitsigns)
+- Toggle-able signs for changes
+- Integrated LazyGit with borderless UI
 
 #### Terminal
 
 | Key | Mode | Description |
 |-----|------|-------------|
-| `<C-`>` | Normal/Terminal | Toggle terminal |
-| `<Esc>` | Terminal | Exit terminal mode |
+| `<C-`>` | Normal/Terminal | Toggle terminal (borderless) |
+| `<Esc>` | Terminal | Exit terminal mode to Normal mode |
 
 #### Code Navigation
 
@@ -204,6 +260,32 @@ Before installing NOE.ED, ensure you have the following:
 └── lazy-lock.json       # Plugin version lockfile
 ```
 
+### Enabled LazyVim Extras
+
+This configuration includes the following LazyVim extras (from lazyvim.json:1):
+
+**AI & Coding:**
+
+- Claude Code integration
+- Supermaven AI completion
+- Mini-surround for text objects
+- DAP (Debug Adapter Protocol) core
+
+**Languages:**
+
+- Astro, Docker, Go, Helm, JSON, Markdown
+- PHP, Python, Rust, Svelte, Tailwind CSS, Twig
+- TypeScript, Vue, YAML, TOML
+
+**Editor & Utilities:**
+
+- Mini-files file manager
+- Snacks explorer & picker
+- Biome formatting
+- GitHub CLI integration
+- Mini-hipatterns
+- REST client
+
 ## Customization
 
 ### Adding Plugins
@@ -231,7 +313,7 @@ set("n", "<leader>custom", ":MyCommand<CR>", { desc = "My custom command" })
 
 ### Changing Colorscheme
 
-Edit `lua/plugins/colorscheme.lua`:
+Edit `lua/plugins/themes/colorscheme.lua`:
 
 ```lua
 return {
@@ -244,6 +326,12 @@ return {
 }
 ```
 
+The current colorscheme is **Eldritch** with custom configuration (lua/plugins/themes/eldritch.lua:1):
+
+- Dim inactive windows enabled
+- Dark sidebars and floats
+- Non-transparent background
+
 ### Disabling Plugins
 
 Add to `lua/plugins/disabled.lua`:
@@ -253,6 +341,45 @@ return {
   { "plugin/name", enabled = false }
 }
 ```
+
+## Key Plugin Configurations
+
+### AI Integrations
+
+**Claude Code** (lua/plugins/ai.lua:27): Official Anthropic integration for Neovim
+
+- Full conversation context management
+- Diff preview and acceptance workflow
+- Model selection support
+
+**OpenCode** (lua/plugins/ai.lua:51): Alternative AI coding assistant
+
+- Auto-reload support
+- Context-aware prompts with `@this`
+- Quick action execution
+
+**Supermaven** (lua/plugins/ai.lua:2): AI-powered code completion
+
+- Custom keybindings for suggestion management
+- Configurable inline completion
+- Filetype ignoring support
+
+### Git Integration
+
+**Gitsigns** (lua/plugins/git.lua:1):
+
+- Current line blame always visible
+- Toggle-able change signs
+- Inline diff viewing
+
+### File Navigation
+
+**Snacks** (lua/plugins/snacks.lua:1):
+
+- Custom NOE.ED branded dashboard
+- Hidden file support in picker/explorer
+- Session persistence (always save)
+- Image preview support (max width: 100)
 
 ## Updating
 
