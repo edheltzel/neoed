@@ -1,4 +1,6 @@
-# NOE.ED <small>(my personal neovim configuration)</small>
+# NOE.ED
+
+**my personal Neovim configuration**
 
 A modern, feature-rich Neovim configuration built on top of [LazyVim](https://github.com/LazyVim/LazyVim) with extensive language support, AI integrations, and a carefully crafted keymap system.
 
@@ -18,6 +20,7 @@ A modern, feature-rich Neovim configuration built on top of [LazyVim](https://gi
 Before installing NOE.ED, ensure you have the following:
 
 - **Neovim** >= 0.9.0 (Recommended: latest stable version)
+
 - **Git** >= 2.19.0
 - **A Nerd Font** (e.g., [JetBrainsMono Nerd Font](https://www.nerdfonts.com/)) installed and configured in your terminal
 - **ripgrep** (for telescope fuzzy finding): `brew install ripgrep` (macOS) or equivalent
@@ -27,12 +30,13 @@ Before installing NOE.ED, ensure you have the following:
 
 ### Optional but Recommended
 
-- **lazygit** (for Git integration): `brew install lazygit`
+- **Lazygit** (for Git integration): `brew install lazygit`
 - **Language-specific tools**:
   - Go: `go`, `gopls`, `gofumpt`
   - Python: `python`, `pyright` or `basedpyright`
   - Rust: `rustc`, `rust-analyzer`
-  - TypeScript: `node`, `typescript`, `typescript-language-server`
+  - Javascript/TypeScript: `node`, `typescript`, `typescript-language-server`
+  - PHP: `php`, `intelephense`
 
 ## Installation
 
@@ -73,6 +77,7 @@ Before installing NOE.ED, ensure you have the following:
 1. **Install language servers** (if not already installed):
 
    Inside Neovim, run:
+
    ```vim
    :Mason
    ```
@@ -100,7 +105,7 @@ Before installing NOE.ED, ensure you have the following:
 ### Getting Started
 
 - **Leader key**: `Space`
-- **Exit Insert mode**: `jj` or `jk`
+- **Exit Insert mode**: `jj`
 - **Save file**: `<leader>fs` or `:w`
 - **Quit**: `<leader>q` or `:q`
 
@@ -110,7 +115,7 @@ Before installing NOE.ED, ensure you have the following:
 
 | Key | Mode | Description |
 |-----|------|-------------|
-| `jj` / `jk` | Insert | Exit Insert mode |
+| `jj` | Insert | Exit Insert mode |
 | `U` | Normal | Redo |
 | `<C-a>` | Normal | Select all |
 | `gh` / `gl` | Normal | Jump to beginning/end of line |
@@ -271,12 +276,14 @@ Then restart Neovim and run `:Lazy sync`.
 ### Plugins not loading
 
 1. Remove plugin cache:
+
    ```bash
    rm -rf ~/.local/share/nvim
    rm -rf ~/.local/state/nvim
    ```
 
 2. Restart Neovim and reinstall:
+
    ```vim
    :Lazy sync
    ```
@@ -284,16 +291,19 @@ Then restart Neovim and run `:Lazy sync`.
 ### LSP not working
 
 1. Check Mason:
+
    ```vim
    :Mason
    ```
 
 2. Check health:
+
    ```vim
    :checkhealth
    ```
 
 3. Manually install LSP server:
+
    ```vim
    :MasonInstall <server-name>
    ```
