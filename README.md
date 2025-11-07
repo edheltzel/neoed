@@ -1,6 +1,6 @@
-# NOE.ED
+# NOE.ED <small>(my personal neovim configuration)</small>
 
-A modern, feature-rich Neovim configuration built on [LazyVim](https://github.com/LazyVim/LazyVim) with extensive language support, AI integrations, and a carefully crafted keymap system.
+A modern, feature-rich Neovim configuration built on top of [LazyVim](https://github.com/LazyVim/LazyVim) with extensive language support, AI integrations, and a carefully crafted keymap system.
 
 ## Features
 
