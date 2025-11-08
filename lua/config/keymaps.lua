@@ -10,7 +10,7 @@
 -- <D> = super/cmd
 
 local set = vim.keymap.set
--- local del = vim.keymap.del
+local del = vim.keymap.del
 local opts = { noremap = true, silent = true }
 local wk = require("which-key")
 local Util = require("lazyvim.util")
@@ -18,8 +18,6 @@ local Util = require("lazyvim.util")
 local set_keymap = vim.api.nvim_set_keymap
 
 -- UNSET EXISTING KEYMAPS
--- del({ "n", "i", "v" }, "<A-j>")
--- del({ "n", "i", "v" }, "<A-k>")
 -- del("n", "<C-Left>")
 -- del("n", "<C-Down>")
 -- del("n", "<C-Up>")
@@ -36,7 +34,7 @@ set("n", "<A-BS>", "db", { noremap = true })
 set("n", "U", "<C-r>", { noremap = true, silent = true, desc = "Redo" })
 set("n", "<C-a>", "ggVG", { noremap = true, silent = true, desc = "Select all" })
 
----- Multiword/Cursors
+---- Multi-word/Cursors
 set({ "n" }, "<C-n>", "*Ncgn", { noremap = true, silent = true, desc = "MultiWord editing use . to repeat" })
 
 set("t", "<Esc>", "<C-\\><C-n>", opts) -- ESCAPE TERMINAL MODE
@@ -60,16 +58,14 @@ set("v", ">", ">gv", { noremap = true, silent = true, desc = "Indent right and r
 set("v", "<", "<gv", { noremap = true, silent = true, desc = "Indent left and reselect" }) -- shift+,
 
 -- LINE BUBBLING - Move lines up/down
----- move line down
-set("n", "<A-down>", ":m .+1<CR>==", { noremap = true, silent = true, desc = "Move line down" })
-set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true, desc = "Move line down" })
-set("v", "<A-down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection down" })
-set("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection down" })
----- move line up
+-- move line up/down
 set("n", "<A-up>", ":m .-2<CR>==", { noremap = true, silent = true, desc = "Move line up" })
-set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true, desc = "Move line up" })
 set("v", "<A-up>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection up" })
-set("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection up" })
+set("n", "<A-down>", ":m .+1<CR>==", { noremap = true, silent = true, desc = "Move line down" })
+set("v", "<A-down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection down" })
+-- unset exiting keymaps
+del({ "n", "i", "v" }, "<A-k>")
+del({ "n", "i", "v" }, "<A-j>")
 
 -- FIX: look into why ripgrep is not working with deafult keymap
 set("n", "<leader>sr", ":GrugFar<CR>", { noremap = true, silent = true, desc = "Search & Replace" })
