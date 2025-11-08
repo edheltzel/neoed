@@ -49,7 +49,7 @@ return {
 
     vim.o.laststatus = vim.g.lualine_laststatus
 
-    local neoEd = require("plugins.themes.lualine.neoed").setup()
+    local neoEd = require("plugins.ui.lualine.neoed").setup()
 
     local opts = {
       options = {

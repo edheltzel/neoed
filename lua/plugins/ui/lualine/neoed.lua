@@ -4,7 +4,7 @@ local M = {}
 
 function M.setup()
   -- Start with the base eldritch theme
-  local neoEd = require("plugins.themes.lualine.eldritch")
+  local neoEd = require("plugins.ui.lualine.eldritch")
 
   -- Custom color palette
   local colors = {
