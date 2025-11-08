@@ -4,7 +4,6 @@ return {
     lazy = false,
     opts = {
       current_line_blame = true,
-      toggle_signs = true,
     },
   },
 }
