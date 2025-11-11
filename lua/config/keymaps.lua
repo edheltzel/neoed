@@ -37,9 +37,13 @@ set("n", "<C-a>", "ggVG", { noremap = true, silent = true, desc = "Select all" }
 ---- Multi-word/Cursors
 set({ "n" }, "<C-n>", "*Ncgn", { noremap = true, silent = true, desc = "MultiWord editing use . to repeat" })
 
-set("t", "<Esc>", "<C-\\><C-n>", opts) -- ESCAPE TERMINAL MODE
+-- ESCAPE TERMINAL MODE
+set("t", "<Esc>", "<C-\\><C-n>", opts)
 
--- duplicate lines up/down
+-- ESCAPE INSERT MODE
+set("i", "jj", "<Esc>", { noremap = true, silent = true, desc = "Exit INSERT mode with jk" })
+
+-- DUPLICATE LINES UP/DOWN
 set("v", "<A-C-Up>", "y`>p`<", opts)
 set("n", "<A-C-Up>", "Vy`>p`<", opts)
 set("v", "<A-C-Down>", "y`<kp`>", opts)
@@ -48,14 +52,18 @@ set("n", "<A-C-Down>", "Vy`<p`>", opts)
 set("v", "<A-C-d>", "y`<kp`>", opts)
 set("n", "<A-C-d>", "Vy`<p`>", opts)
 
+---- INDENTING
+-- shift+.
+set("v", ">", ">gv", { noremap = true, silent = true, desc = "Indent right and reselect" })
+-- shift+,
+set("v", "<", "<gv", { noremap = true, silent = true, desc = "Indent left and reselect" })
+
 -- JUMP to BOL/EOL
 set("n", "gh", "^", { noremap = true, silent = true, desc = "Jump beginning of line" })
 set("n", "gl", "$", { noremap = true, silent = true, desc = "Jump end of line" })
 
 -- CLEAR SEARCH HIGHLIGHTS
 set("n", "<leader>nh", ":nohl<CR>", { noremap = true, silent = true, desc = "Clear search highlights" })
-set("v", ">", ">gv", { noremap = true, silent = true, desc = "Indent right and reselect" }) -- shift+.
-set("v", "<", "<gv", { noremap = true, silent = true, desc = "Indent left and reselect" }) -- shift+,
 
 -- LINE BUBBLING - Move lines up/down
 -- move line up/down
@@ -67,11 +75,7 @@ set("v", "<A-down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc =
 del({ "n", "i", "v" }, "<A-k>")
 del({ "n", "i", "v" }, "<A-j>")
 
--- FIX: look into why ripgrep is not working with deafult keymap
-set("n", "<leader>sr", ":GrugFar<CR>", { noremap = true, silent = true, desc = "Search & Replace" })
-
----- VSpaceCode-ish -----------------------------------------------------------------------------
-
+--- VSpaceCode-ish -----------------------------------------------------------------------------
 ---- save file
 set("n", "<leader>fs", ":w<CR>", { noremap = true, silent = true, desc = "Save file" })
 set("n", "<leader>fS", ":noautocmd w<CR>", { noremap = true, silent = true, desc = "Save without formatting" })

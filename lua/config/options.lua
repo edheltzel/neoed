@@ -14,6 +14,7 @@ vim.fn.setenv("CARGO_TARGET_DIR", vim.fn.stdpath("cache") .. "/cargo-target")
 opt.cursorline = true
 opt.cursorcolumn = true
 
+opt.scrolloff = 5
 opt.wrap = true
 
 opt.swapfile = false

@@ -9,7 +9,8 @@
       "Bash(tree:*)",
       "Bash(cat:*)",
       "Bash(awk:*)",
-      "Bash(lua/config/keymaps.lua.tmp)"
+      "Bash(lua/config/keymaps.lua.tmp)",
+      "Bash(nvim:*)"
     ],
     "deny": [],
     "ask": []

@@ -43,17 +43,20 @@ lua/
 This configuration includes the following LazyVim extras (from lazyvim.json):
 
 **AI/Coding:**
+
 - claudecode (Claude Code integration)
 - supermaven (AI completion)
 - mini-surround (surround text objects)
 - dap.core (debugging)
 
 **Languages:**
+
 - Go, Python, Rust, TypeScript, PHP
 - Astro, Svelte, Vue
 - Docker, Helm, YAML, TOML, JSON, Markdown
 
 **Utilities:**
+
 - GitHub CLI integration
 - REST client
 - Mini-hipatterns
@@ -98,6 +101,7 @@ Example: lua/plugins/languages/go.lua configures gopls with gofumpt, auto-import
 The configuration uses `<leader>` (Space) as the primary prefix. Notable custom bindings (lua/config/keymaps.lua):
 
 **General:**
+
 - `jj` / `jk` - Exit INSERT mode
 - `U` - Redo (shift+u)
 - `<C-a>` - Select all
@@ -106,6 +110,7 @@ The configuration uses `<leader>` (Space) as the primary prefix. Notable custom 
 - `<Enter>` - Code folding toggle
 
 **AI/Claude Code (<leader>a):**
+
 - `<leader>ac` - Toggle Claude
 - `<leader>af` - Focus Claude
 - `<leader>ar` - Resume Claude
@@ -114,16 +119,18 @@ The configuration uses `<leader>` (Space) as the primary prefix. Notable custom 
 - `<leader>ad` - Deny diff
 
 **File/Window Management:**
+
 - `<leader>fs` - Save file
 - `<C-hjkl>` - Navigate splits
 - `<C-`>` - Toggle terminal
 
 **Search/Navigation:**
+
 - `<leader>jj` - Flash jump (leap to character)
-- `<leader>sr` - Search & Replace (GrugFar)
 - `<C-n>` - Multi-word editing (use `.` to repeat)
 
 **Git:**
+
 - `<leader>gg` - LazyGit (borderless)
 
 ## Custom Options
@@ -158,6 +165,7 @@ Key vim options set in lua/config/options.lua:
 ### Modifying Keybindings
 
 Edit `lua/config/keymaps.lua`. The file uses:
+
 - `vim.keymap.set()` for setting keymaps
 - `require("which-key").add()` for groupings
 
