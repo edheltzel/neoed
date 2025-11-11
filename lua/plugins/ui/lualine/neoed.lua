@@ -8,6 +8,7 @@ function M.setup()
 
   -- Custom color palette
   local colors = {
+    darker = "#171928",
     bg = "#212337",
     darkGray = "#323449",
     fg = "#454E7D",
@@ -58,7 +59,8 @@ function M.setup()
   -- Add color properties for easy access
   neoEd.fg = colors.fg
   neoEd.gray = colors.gray
-
+  neoEd.dark = colors.darker
+  neoEd.bgRecord = neoEd.insert.a.bg
   return neoEd
 end
 

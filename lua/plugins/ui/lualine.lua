@@ -108,22 +108,6 @@ return {
               return add_width(str, "profiler")
             end,
           },
-          { -- show macro recording
-            function()
-              local reg = vim.fn.reg_recording()
-              if reg == "" then
-                return ""
-              end -- not recording
-              return " recording to @" .. reg
-            end,
-            padding = { left = 0, right = 0 },
-            color = function()
-              return { fg = Snacks.util.color("Error") }
-            end,
-            fmt = function(str)
-              return add_width(str, "recording")
-            end,
-          },
           { -- show dap info
             function()
               return "  " .. require("dap").status()
@@ -180,9 +164,28 @@ return {
             file_status = true,
             newfile_status = true,
             color = { fg = neoEd.fg, gui = "BOLD" },
-            padding = { left = 0, right = 0 },
+            padding = { left = 0, right = 1 },
             fmt = function(str)
               return add_width(str, "filename")
+            end,
+          },
+          { -- show macro recording
+            function()
+              local reg = vim.fn.reg_recording()
+              if reg == "" then
+                return ""
+              end -- not recording
+              return " recording to @" .. reg .. " "
+            end,
+            padding = { left = 0, right = 0 },
+            color = function()
+              return {
+                fg = neoEd.dark,
+                bg = neoEd.replace.a.fg,
+              }
+            end,
+            fmt = function(str)
+              return add_width(str, "recording")
             end,
           },
         },
