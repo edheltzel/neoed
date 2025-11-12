@@ -23,5 +23,5 @@ opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undo"
 opt.undofile = true
 
-opt.spell = true
+opt.spell = false
 opt.spelllang = "en_us"

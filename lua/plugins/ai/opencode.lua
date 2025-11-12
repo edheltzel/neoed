@@ -2,7 +2,7 @@ return {
   -- Opencode
   {
     "NickvanDyke/opencode.nvim",
-    -- enabled = false, -- see disabled.lua
+    -- -1
     dependencies = {
       {
         "folke/snacks.nvim",
@@ -22,20 +22,19 @@ return {
       -- Required for `opts.auto_reload`.
       vim.o.autoread = true
 
-      -- Recommended/example keymaps.
-      vim.keymap.set({ "n", "x" }, "<C-A-a>", function()
+      vim.keymap.set({ "n", "x" }, "<leader>aoa", function()
         require("opencode").ask("@this: ", { submit = true })
       end, { desc = "Ask OpenCode" })
 
-      vim.keymap.set({ "n", "x" }, "<C-A-x>", function()
+      vim.keymap.set({ "n", "x" }, "<leader>aox", function()
         require("opencode").select()
       end, { desc = "Execute OpenCode action…" })
 
-      vim.keymap.set({ "n", "x" }, "<C-A-g>", function()
+      vim.keymap.set({ "n", "x" }, "<leader>aod", function()
         require("opencode").prompt("@this")
       end, { desc = "Add to OpenCode" })
 
-      vim.keymap.set("n", "<leader>ao", function()
+      vim.keymap.set("n", "<leader>aoc", function()
         require("opencode").toggle()
       end, { desc = "Launch OpenCode" })
     end,
