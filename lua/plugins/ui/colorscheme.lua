@@ -38,6 +38,9 @@ return {
         highlights.SnacksPickerTree = { fg = colors.dark5 }
         highlights.WhichKeyBorder = { fg = colors.comment }
         highlights.FloatBorder = { fg = colors.comment }
+        -- Inline markdown code: lift it off the editor bg and split it from cyan links
+        highlights["@markup.raw.markdown_inline"] = { bg = colors.bg_highlight, fg = colors.green }
+        highlights.RenderMarkdownCodeInline = { bg = colors.bg_highlight, fg = colors.green }
       end,
     },
   },
