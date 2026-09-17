@@ -5,6 +5,7 @@
 --
 -- SUPPORTED COLORSCHEMES:
 --   - eldritch
+--   - tokyonight
 --   - rose-pine, rose-pine-moon, rose-pine-dawn
 --   - catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 --   - vesper
@@ -84,6 +85,9 @@ local function get_colors(colorscheme)
   elseif colorscheme == "eldritch" then
     local eldritch = require("plugins.ui.lualine.eldritch")
     return eldritch.get_colors(colorscheme)
+  elseif colorscheme == "tokyonight" or colorscheme:match("^tokyonight") then
+    local tokyonight = require("plugins.ui.lualine.tokyonight")
+    return tokyonight.get_colors("tokyonight")
   elseif colorscheme:match("^catppuccin") then
     local catppuccin = require("plugins.ui.lualine.catppuccin")
     return catppuccin.get_colors(colorscheme)

@@ -27,9 +27,6 @@ return {
         "help",
         "terminal",
       },
-      on_colors = function(colors)
-        colors.bg = "#171928"
-      end,
       on_highlights = function(highlights, colors)
         highlights.SnacksDashboardHeader = { fg = colors.fg_gutter }
         highlights.SnacksDashboardDesc = { fg = colors.fg_dark }
@@ -103,7 +100,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "eldritch",
+      colorscheme = "catppuccin-latte",
     },
   },
 }
