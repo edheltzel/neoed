@@ -82,11 +82,10 @@ return {
     },
   },
   {
-    -- dracula
-    "Mofiqul/dracula.nvim",
+    -- dracula (official)
+    "dracula/vim",
     name = "dracula",
     lazy = true,
-    opts = {},
   },
   {
     -- gruvbox

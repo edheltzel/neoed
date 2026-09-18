@@ -18,6 +18,20 @@ M.palettes = {
       magenta = "#ff79c6", -- insert mode accent (pink)
     },
   },
+  ["alucard"] = {
+    colors = {
+      darker = "#ECE9DF", -- bglighter (inactive)
+      bg = "#FFFBEB", -- paper background
+      darkGray = "#CFCFDE", -- selection
+      fg = "#1F1F1F",
+      gray = "#6C664B", -- comment
+      green = "#14710A",
+      blue = "#036A96", -- cyan
+      purple = "#644AC9",
+      red = "#CB3A2A",
+      magenta = "#A3144D", -- pink
+    },
+  },
 }
 
 function M.get_colors(variant)

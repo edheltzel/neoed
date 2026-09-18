@@ -9,7 +9,7 @@
 --   - rose-pine, rose-pine-moon, rose-pine-dawn
 --   - catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 --   - vesper
---   - dracula
+--   - dracula, alucard
 --   - gruvbox
 --
 -- HOW IT WORKS:
@@ -94,7 +94,7 @@ local function get_colors(colorscheme)
   elseif colorscheme == "vesper" then
     local vesper = require("plugins.ui.lualine.vesper")
     return vesper.get_colors(colorscheme)
-  elseif colorscheme == "dracula" then
+  elseif colorscheme == "dracula" or colorscheme == "alucard" then
     local dracula = require("plugins.ui.lualine.dracula")
     return dracula.get_colors(colorscheme)
   elseif colorscheme == "gruvbox" then
