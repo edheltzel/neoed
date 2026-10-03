@@ -126,6 +126,11 @@ set("n", "<leader>gb", function()
   Snacks.terminal({ "but", "tui" }, { cwd = vim.fn.getcwd(), win = { border = "none" } })
 end, { noremap = true, silent = true, desc = "GitButler TUI" })
 
+-- GitHub Dash
+set("n", "<leader>gh", function()
+  Snacks.terminal({ "gh", "dash" }, { cwd = vim.fn.getcwd(), win = { border = "rounded" } })
+end, { noremap = true, silent = true, desc = "GitHub Dash" })
+
 --------------------------------------------------------------------------------------------
 ---- MacOS CMD keymaps ---------------------------------------------------------------------
 ---- CSI u keyboard protocol must be supported by your terminal ----------------------------
