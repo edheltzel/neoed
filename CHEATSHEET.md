@@ -81,7 +81,7 @@ U                    Redo
 
 ```
 <leader>gg           Lazygit (borderless)
-<leader>gh           GitHub Dash (rounded float)
+<leader>gb           GitButler TUI (borderless)
 ```
 
 ### macOS Cmd Keys (requires CSI u protocol)
