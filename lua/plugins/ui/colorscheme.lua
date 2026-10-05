@@ -82,10 +82,13 @@ return {
     },
   },
   {
-    -- dracula (official)
-    "dracula/vim",
+    -- dracula: https://github.com/mofiqul/dracula.nvim
+    "Mofiqul/dracula.nvim",
     name = "dracula",
     lazy = true,
+    opts = {
+      transparent_bg = true,
+    },
   },
   {
     -- gruvbox
@@ -99,7 +102,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-latte",
+      colorscheme = "dracula",
     },
   },
 }

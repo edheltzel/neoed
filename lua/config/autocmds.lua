@@ -135,3 +135,22 @@ api.nvim_create_autocmd("FileType", {
     vim.opt_local.spell = true
   end,
 })
+
+-- exclude wrapping of YAML frontmatter
+api.nvim_create_autocmd({ "InsertEnter", "CursorMovedI" }, {
+  group = api.nvim_create_augroup("neoed_frontmatter_nowrap", { clear = true }),
+  pattern = { "*.md", "*.mdx" },
+  callback = function()
+    local row = api.nvim_win_get_cursor(0)[1]
+    local in_fm = row > 1 and vim.fn.getline(1) == "---"
+    for i = 2, row - 1 do
+      if not in_fm then
+        break
+      end
+      if vim.fn.getline(i) == "---" then
+        in_fm = false
+      end
+    end
+    vim.bo.textwidth = in_fm and 0 or vim.go.textwidth
+  end,
+})
