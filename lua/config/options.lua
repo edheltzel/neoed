@@ -13,8 +13,8 @@ opt.cursorline = true
 opt.scrolloff = 8
 
 opt.linespace = 2
-opt.textwidth = 80
-opt.colorcolumn = "80"
+opt.textwidth = 100
+opt.colorcolumn = "100"
 opt.wrap = true
 
 opt.swapfile = false
