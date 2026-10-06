@@ -35,7 +35,7 @@ return {
             key = "v",
             desc = "NEO.ED",
             action = function()
-              open_project("~/.dotfiles/neoed/.config/nvim")
+              open_project("~/.dotfiles/neovim/.config/nvim")
             end,
           },
           {

@@ -121,9 +121,9 @@ set("n", "<leader>gg", function()
   Snacks.lazygit({ cwd = vim.fn.getcwd(), esc_esc = false, ctrl_hjkl = false, border = "none" })
 end, { noremap = true, silent = true, desc = "Lazygit (root dir)" })
 
--- borderless GitButler TUI
+-- GitButler TUI
 set("n", "<leader>gb", function()
-  Snacks.terminal({ "but", "tui" }, { cwd = vim.fn.getcwd(), win = { border = "none" } })
+  Snacks.terminal({ "but", "tui" }, { cwd = vim.fn.getcwd(), win = { border = "rounded" } })
 end, { noremap = true, silent = true, desc = "GitButler TUI" })
 
 -- GitHub Dash
