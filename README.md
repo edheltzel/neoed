@@ -9,8 +9,8 @@
 
 # NEO.ED
 
-> [!NOTE]
-> EdHeltzel's Neovim Configuration
+> [!WARNING]
+> This now lives inside of my [Dotfiles](https://github.com/edheltzel/dotfiles)
 
 My personal Neovim configuration, based on LazyVim - optimized for web development and used as my ADE (AI/Agent Development
 Environment) of choice.
